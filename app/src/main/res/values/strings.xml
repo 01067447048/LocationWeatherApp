@@ -1,0 +1,24 @@
+<resources>
+    <string name="app_name">LocationWeatherApp</string>
+    <string name="temp">기온</string>
+    <string name="rn1">1시간 강수량</string>
+    <string name="wind_direction">풍향</string>
+    <string name="wind_speed">풍속</string>
+    <string name="humidity">습도</string>
+    <string name="rain_type">강수형태</string>
+    <string name="rain_weight">강수량</string>
+    <string name="wind_state">바람상태</string>
+    <string name="now_time">현재시각 : %s</string>
+    <string name="east_north">북동쪽</string>
+    <string name="east_south">남동쪽</string>
+    <string name="west_north">북서쪽</string>
+    <string name="west_south">남서쪽</string>
+    <string name="rain_type_none">없음</string>
+    <string name="rain_type_rain">비</string>
+    <string name="rain_type_rain_or_snow">비/눈</string>
+    <string name="rain_type_snow">눈</string>
+    <string name="rain_type_raindrop">빗방울</string>
+    <string name="rain_type_raindrop_and_snow">빗방울눈날림</string>
+    <string name="rain_type_snow_wind">눈날림</string>
+    <string name="main_title">내 동네 날씨</string>
+</resources>
