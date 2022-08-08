@@ -1,7 +1,6 @@
 package com.jaehyeon.myapplication.presentation.ui.viewmodel
 
 import android.location.Location
-import android.util.Log
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.jaehyeon.domain.repository.LocationRepository
@@ -9,7 +8,7 @@ import com.jaehyeon.myapplication.BuildConfig
 import com.jaehyeon.myapplication.presentation.model.WeatherModel
 import com.jaehyeon.myapplication.presentation.usecases.WeatherUseCase
 import com.jaehyeon.myapplication.utils.Resource
-import com.jaehyeon.myapplication.utils.TransLocationUtil
+import com.jaehyeon.myapplication.utils.toTransLocation
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.*
 import kotlinx.coroutines.launch
@@ -80,7 +79,7 @@ class MainViewModel @Inject constructor(
             }
         }
 
-        val transLocation = TransLocationUtil.convertLocation(location)
+        val transLocation = location.toTransLocation()
 
         return HashMap<String, String>().apply {
             put("serviceKey", BuildConfig.SERVICE_KEY)
