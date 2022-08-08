@@ -10,6 +10,7 @@ import com.jaehyeon.myapplication.presentation.usecases.WeatherUseCase
 import com.jaehyeon.myapplication.utils.Resource
 import com.jaehyeon.myapplication.utils.toTransLocation
 import dagger.hilt.android.lifecycle.HiltViewModel
+import kotlinx.coroutines.channels.Channel
 import kotlinx.coroutines.flow.*
 import kotlinx.coroutines.launch
 import java.time.LocalDateTime
@@ -32,6 +33,9 @@ class MainViewModel @Inject constructor(
 
     private val _state: MutableStateFlow<WeatherState> = MutableStateFlow(WeatherState())
     val state: StateFlow<WeatherState> get() = _state.asStateFlow()
+
+    private val _channel: Channel<WeatherState> = Channel()
+    val channel = _channel.receiveAsFlow()
 
     private fun createRequestParams(location: Location): HashMap<String, String> {
 
@@ -115,6 +119,12 @@ class MainViewModel @Inject constructor(
                         }
                     }
                 }.launchIn(viewModelScope)
+//                useCase.invoke(createRequestParams(location)).onEach {
+//                    _channel.send(WeatherState(
+//                        isLoading = false,
+//                        weatherData = it.data
+//                    ))
+//                }.launchIn(viewModelScope)
             }
         }
     }

@@ -57,6 +57,18 @@ class MainActivity : AppCompatActivity() {
                 if (it.isLoading) binding.pr.visibility = View.VISIBLE
                 else binding.pr.visibility = View.GONE
             }
+
+//            model.channel.collectLatest {
+//                binding.model = it.weatherData
+//
+//                if (it.error.isNotEmpty()) {
+//                    Toast.makeText(this@MainActivity, it.error, Toast.LENGTH_SHORT).show()
+//                    Log.e(javaClass.simpleName, "onResume: ${it.error}", )
+//                }
+//
+//                if (it.isLoading) binding.pr.visibility = View.VISIBLE
+//                else binding.pr.visibility = View.GONE
+//            }
         }
 //        lifecycleScope.launch {
 //            repeatOnLifecycle(Lifecycle.State.RESUMED) {
