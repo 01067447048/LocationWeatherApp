@@ -90,6 +90,8 @@ class MainViewModel @Inject constructor(
             put("dataType", "JSON")
             put("base_date", baseDate)
             put("base_time", baseTime)
+//            put("nx", transLocation.nx.toString())
+//            put("ny", transLocation.ny.toString())
             put("nx", transLocation.nx.toInt().toString())
             put("ny", transLocation.ny.toInt().toString())
         }

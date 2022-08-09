@@ -34,7 +34,7 @@ class WeatherRepositoryImpl @Inject constructor(
             "32" -> throw WeatherApiException.UnregisteredIpErrorException(resource.response.header.resultMsg)
             "33" -> throw WeatherApiException.UnSignedCallErrorException(resource.response.header.resultMsg)
             "99" -> throw WeatherApiException.UnknownErrorException(resource.response.header.resultMsg)
-            else -> throw Throwable()
+            else -> throw Throwable("Unknown Error")
         }
     }
 }
